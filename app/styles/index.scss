@@ -1,1 +1,43 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+$font-family:'Playfair Display', serif;
+$body-bg-color: pink;
+// $box-bg-color: white;
+// $box-border-color: white;
+// $alt-bg-color: cyan;
+body {
+  background-color: $body-bg-color;
+  display: flex;
+  flex-direction: column;
+  
+}
+#sign-up-form {
+    justify-content: center;
+    display: flex;
+}
+h3 {
+    justify-content: center;
+    display: flex;
+}
+#sign-in-form {
+    justify-content: center;
+    display: flex;
+}
+h1 {
+    justify-content: center;
+    display: flex;
+}
+#gameboard{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    justify-content: center;
+}
+.box{
+    background-color: white;
+    margin: 10px;
+    
+
+
+}
