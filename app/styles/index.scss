@@ -3,9 +3,9 @@
 
 $font-family:'Playfair Display', serif;
 $body-bg-color: pink;
-// $box-bg-color: white;
-// $box-border-color: white;
-// $alt-bg-color: cyan;
+$box-bg-color: white;
+$box-border-color: white;
+$alt-bg-color: cyan;
 body {
   background-color: $body-bg-color;
   display: flex;

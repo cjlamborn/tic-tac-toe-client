@@ -1,118 +1,136 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <div id="log-in">
-      <h1>Browser Template</h1>
-        <h3>Sign Up</h3>
-        <form id="sign-up-form">
-          <input name="credentails[email]" type="email" placeholder="email">
-          <input name="credentials[password]" type="password" placeholder="password">
-          <input name="credentials[password_confirmation" type="password" placeholder="password again">
-          <button type="submit">Sign Up</button>
-        </form>
-        <h3>Sign In</h3>
-        <form id="sign-in-form">
-          <input name="credentails[email]" type="email" placeholder="email">
-          <input name="credentials[password]" type="password" placeholder="password">
-          <button type="submit">Sign Up</button>
-        </form>
-        <section id="auth-display"></section>
-        </div>
-      <h1>Tic Tac Toe</h1>
-      <div id="gameboard">
-        
-          <div id="one" onclick="myFunction1()" ondblclick = "fun()" class="box"> </div>
-          <div id="two" onclick="myFunction2()" ondblclick = "fun2()" class="box"> </div>
-          <div id="three" onclick="myFunction3()" ondblclick = "fun3()" class="box"></div>
-          <div id="four" onclick="myFunction4()" ondblclick = "fun4()" class="box"> </div>
-          <div id="five" onclick="myFunction5()" ondblclick = "fun5()" class="box"> </div>
-          <div id="six" onclick="myFunction6()" ondblclick = "fun6()" class="box"> </div>
-          <div id="seven" onclick="myFunction7()" ondblclick = "fun7()" class="box"> </div>
-          <div id="eight" onclick="myFunction8()" ondblclick = "fun8()" class="box"> </div>
-          <div id="nine" onclick="myFunction9()" ondblclick = "fun9()" class="box"> </div>
-        
-        
-      </div>
-      <script>
-        function showAlert() {
-          alert('You won!')
-        }
-      </script>
-      
-      <div id="game-is-over">
-        <button type="button" id="new-game" class="btn btn-primary btn-lg">New Game</button>
-      </div>
-      <p id="print"></p>
-  
-      <script>
-        // function myFunction() {
-        //   document.getElementById("one").innerHTML = "X";
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div id="log-in">
+    <h1>Browser Template</h1>
+    <h3>Sign Up</h3> 
+    <form id="sign-up-form">
+      <input name="credentials[email]" type="email" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input name="credentials[password_confirmation" type="password" placeholder="password again">
+      <button type="submit">Sign Up</button>
+    </form>
+    <h3>Sign In</h3>
+    <form id="sign-in-form">
+      <input name="credentials[email]" type="email" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <button type="submit">Sign In</button>
+    </form>
+    <section id="auth-display"></section>
+  </div>
+  <h1>Tic Tac Toe</h1>
+  <!-- <p id="ins">Click once for X. Double click for O</p> -->
+
+  <div id="gameboard" class="container">
+    <div id="one" onclick="myFunction1(); myFunction();" ondblclick="fun()" class="box"> </div>
+    <div id="two" onclick="myFunction2(); myFunction();" ondblclick="fun2()" class="box"> </div>
+    <div id="three" onclick="myFunction3(); myFunction();" ondblclick="fun3()" class="box"></div>
+    <div id="four" onclick="myFunction4(); myFunction();" ondblclick="fun4()" class="box"> </div>
+    <div id="five" onclick="myFunction5(); myFunction();" ondblclick="fun5()" class="box"> </div>
+    <div id="six" onclick="myFunction6(); myFunction();" ondblclick="fun6()" class="box"> </div>
+    <div id="seven" onclick="myFunction7(); myFunction();" ondblclick="fun7()" class="box"> </div>
+    <div id="eight" onclick="myFunction8(); myFunction();" ondblclick="fun8()" class="box"> </div>
+    <div id="nine" onclick="myFunction9(); myFunction();" ondblclick="fun9()" class="box"> </div>
+  </div>
+
+  <script>
+        // function showAlert() {
+        //   alert('You won!')
         // }
-        // function myFunction2() {
-        //     document.getElementById("two").innerHTML = "X";
-        //   }
-        // function myFunction3() {
-        //     document.getElementById("three").innerHTML = "X";
-        //   }
-        // function myFunction4() {
-        //     document.getElementById("four").innerHTML = "X";
-        //   }
-        // function myFunction5() {
-        //     document.getElementById("five").innerHTML = "X";
-        //   }
-        // function myFunction6() {
-        //     document.getElementById("six").innerHTML = "X";
-        //   }
-        // function myFunction7() {
-        //     document.getElementById("seven").innerHTML = "X";
-        //   }
-        // function myFunction8() {
-        //     document.getElementById("eight").innerHTML = "X";
-        //   }
-        // function myFunction9() {
-        //     document.getElementById("nine").innerHTML = "X";
-        //   }
-      </script>
-     <script>
-      //  function fun() {
-      //     document.getElementById("one").innerHTML = "O";
-      //  }
-      //  function fun2() {
-      //     document.getElementById("two").innerHTML = "O";
-      //   }
-      //  function fun3() {
-      //      document.getElementById("three").innerHTML = "O";
-      //   }
-      // function fun4() {
-      //     document.getElementById("four").innerHTML = "O";
-      //   }
-      // function fun5() {
-      //     document.getElementById("five").innerHTML = "O";
-      //   }
-      // function fun6() {
-      //     document.getElementById("six").innerHTML = "O";
-      //   }
-      // function fun7() {
-      //     document.getElementById("seven").innerHTML = "O";
-      //   }
-      // function fun8() {
-      //     document.getElementById("eight").innerHTML = "O";
-      //   }
-      // function fun9() {
-      //     document.getElementById("nine").innerHTML = "O";
-      //   }
-     </script>
-    
-    </body>
+  </script>
+
+  <div id="game-is-over">
+    <button type="button" id="new-game" class="btn btn-primary btn-lg" onclick="clickReset()">New Game</button>
+    <div id="print"> </div>
+  </div>
+  
+
+  <script>
+    function myFunction1() {
+      document.getElementById("one").innerHTML = "X";
+    }
+    function myFunction2() {
+      document.getElementById("two").innerHTML = "X";
+    }
+    function myFunction3() {
+      document.getElementById("three").innerHTML = "X";
+    }
+    function myFunction4() {
+      document.getElementById("four").innerHTML = "X";
+    }
+    function myFunction5() {
+      document.getElementById("five").innerHTML = "X";
+    }
+    function myFunction6() {
+      document.getElementById("six").innerHTML = "X";
+    }
+    function myFunction7() {
+      document.getElementById("seven").innerHTML = "X";
+    }
+    function myFunction8() {
+      document.getElementById("eight").innerHTML = "X";
+    }
+    function myFunction9() {
+      document.getElementById("nine").innerHTML = "X";
+    }
+  </script>
+  <script>
+    function fun() {
+      document.getElementById("one").innerHTML = "O";
+    }
+    function fun2() {
+      document.getElementById("two").innerHTML = "O";
+    }
+    function fun3() {
+      document.getElementById("three").innerHTML = "O";
+    }
+    function fun4() {
+      document.getElementById("four").innerHTML = "O";
+    }
+    function fun5() {
+      document.getElementById("five").innerHTML = "O";
+    }
+    function fun6() {
+      document.getElementById("six").innerHTML = "O";
+    }
+    function fun7() {
+      document.getElementById("seven").innerHTML = "O";
+    }
+    function fun8() {
+      document.getElementById("eight").innerHTML = "O";
+    }
+    function fun9() {
+      document.getElementById("nine").innerHTML = "O";
+    }
+  </script>
+  <script>
+    function clickReset() {
+        location.reload()
+        document.getElementById('one').value = ''
+        document.getElementById('two').value = ''
+        document.getElementById('three').value = ''
+        document.getElementById('four').value = ''
+        document.getElementById('five').value = ''
+        document.getElementById('five').value = ''
+        document.getElementById('six').value = ''
+        document.getElementById('seven').value = ''
+        document.getElementById('eight').value = ''
+        document.getElementById('nine').value = ''
+      }
+  </script>
+</body>
+
 </html>

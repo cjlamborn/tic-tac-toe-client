@@ -25,7 +25,7 @@ const onSignIn = function (event) {
   const data = getFormFields(form)
   console.log(data)
   // who knows
-  authApi.signUp(data)
+  authApi.signIn(data)
     .then(() => authUi.onSignInSuccess())
     .catch(() => authUi.onSignInFailure())
   // formfields isnt defined need to do somehitng go to lib/get formfields //*const
