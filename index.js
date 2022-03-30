@@ -2,7 +2,7 @@
 // var example = require('./example');
 
 import 'bootstrap'
-
+// hello
 // allows usage of new JS features
 require('babel-polyfill')
 
@@ -128,5 +128,3 @@ restartButton.addEventListener('click', () => {
   currentPlayer = oText
 })
 drawBoard()
-
-
