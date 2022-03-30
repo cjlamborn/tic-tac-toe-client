@@ -4,16 +4,20 @@
 <head>
   <title>Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Rubik&display=swap" rel="stylesheet">
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <!-- <script type="text/javascript" src="http://bpmaker.giffy.me/userdata/user/53/53959/2/parts.js"></script> -->
 </head>
 
 <body>
+  
   <div id="log-in">
     <h1>Browser Template</h1>
     <h3>Sign Up</h3> 
@@ -33,90 +37,30 @@
   </div>
   <h1>Tic Tac Toe</h1>
   <!-- <p id="ins">Click once for X. Double click for O</p> -->
-
-  <div id="gameboard" class="container">
-    <div id="one" onclick="myFunction1(); myFunction();" ondblclick="fun()" class="box"> </div>
-    <div id="two" onclick="myFunction2(); myFunction();" ondblclick="fun2()" class="box"> </div>
-    <div id="three" onclick="myFunction3(); myFunction();" ondblclick="fun3()" class="box"></div>
-    <div id="four" onclick="myFunction4(); myFunction();" ondblclick="fun4()" class="box"> </div>
-    <div id="five" onclick="myFunction5(); myFunction();" ondblclick="fun5()" class="box"> </div>
-    <div id="six" onclick="myFunction6(); myFunction();" ondblclick="fun6()" class="box"> </div>
-    <div id="seven" onclick="myFunction7(); myFunction();" ondblclick="fun7()" class="box"> </div>
-    <div id="eight" onclick="myFunction8(); myFunction();" ondblclick="fun8()" class="box"> </div>
-    <div id="nine" onclick="myFunction9(); myFunction();" ondblclick="fun9()" class="box"> </div>
   </div>
 
-  <script>
-        // function showAlert() {
-        //   alert('You won!')
-        // }
-  </script>
-
-  <div id="game-is-over">
-    <button type="button" id="new-game" class="btn btn-primary btn-lg" onclick="clickReset()">New Game</button>
-    <div id="print"> </div>
-  </div>
+<div class="container">
+  <h1 id="playText">Let's Play!!</h1>
   
-
-  <script>
-    function myFunction1() {
-      document.getElementById("one").innerHTML = "X";
-    }
-    function myFunction2() {
-      document.getElementById("two").innerHTML = "X";
-    }
-    function myFunction3() {
-      document.getElementById("three").innerHTML = "X";
-    }
-    function myFunction4() {
-      document.getElementById("four").innerHTML = "X";
-    }
-    function myFunction5() {
-      document.getElementById("five").innerHTML = "X";
-    }
-    function myFunction6() {
-      document.getElementById("six").innerHTML = "X";
-    }
-    function myFunction7() {
-      document.getElementById("seven").innerHTML = "X";
-    }
-    function myFunction8() {
-      document.getElementById("eight").innerHTML = "X";
-    }
-    function myFunction9() {
-      document.getElementById("nine").innerHTML = "X";
-    }
-  </script>
-  <script>
-    function fun() {
-      document.getElementById("one").innerHTML = "O";
-    }
-    function fun2() {
-      document.getElementById("two").innerHTML = "O";
-    }
-    function fun3() {
-      document.getElementById("three").innerHTML = "O";
-    }
-    function fun4() {
-      document.getElementById("four").innerHTML = "O";
-    }
-    function fun5() {
-      document.getElementById("five").innerHTML = "O";
-    }
-    function fun6() {
-      document.getElementById("six").innerHTML = "O";
-    }
-    function fun7() {
-      document.getElementById("seven").innerHTML = "O";
-    }
-    function fun8() {
-      document.getElementById("eight").innerHTML = "O";
-    }
-    function fun9() {
-      document.getElementById("nine").innerHTML = "O";
-    }
-  </script>
-  <script>
+  <div id="gameboard">
+    <div class="box" id="0"></div>
+    <div class="box" id="1"></div>
+    <div class="box" id="2"></div>
+    <div class="box" id="3"></div>
+    <div class="box" id="4"></div>
+    <div class="box" id="5"></div>
+    <div class="box" id="6"></div>
+    <div class="box" id="7"></div>
+    <div class="box" id="8"></div>
+    <button id="new-game">New Game</button>
+  </div>
+</div>
+ <!-- <script>
+   function xxxx () {
+     document.getElementById('gameboard').style.display = 'block'
+   }
+ </script> -->
+  <!-- <script>
     function clickReset() {
         location.reload()
         document.getElementById('one').value = ''
@@ -130,7 +74,7 @@
         document.getElementById('eight').value = ''
         document.getElementById('nine').value = ''
       }
-  </script>
+  </script> -->
 </body>
 
 </html>

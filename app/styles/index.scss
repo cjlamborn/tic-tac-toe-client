@@ -3,8 +3,8 @@
 
 $font-family:'Playfair Display', serif;
 $body-bg-color: pink;
-$box-bg-color: white;
-$box-border-color: white;
+$box-bg-color: pink;
+$box-border-color: purple;
 $alt-bg-color: cyan;
 body {
   background-color: $body-bg-color;
@@ -15,6 +15,9 @@ body {
 #sign-up-form {
     justify-content: center;
     display: flex;
+}
+h1 {
+    font-family: 'Rubik', sans-serif;
 }
 h3 {
     justify-content: center;
@@ -29,15 +32,96 @@ h1 {
     display: flex;
 }
 #gameboard{
+    opacity: 0;
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
     justify-content: center;
 }
 .box{
-    background-color: white;
-    margin: 10px;
     
-
-
+    background-color: white;
+    border-color: purple;
+    margin: 10px;
+    color: pink; font-size: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+button {
+    padding: 10px 20px;
+    background-color: peachpuff;
+    font-family: 'Rubik', sans-serif;
+}
+#new-game {
+    margin: 0;
+    position: absolute;
+    top: 90%;
+    left: 44%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+// }
+// :root {
+//   --purple: #3e0249;
+// }
+// body {
+//   margin: 0;
+//   padding: 0;
+//   color: var(--purple);
+//   font-family: sans-serif;
+// }
+// * {
+//   box-sizing: border-box;
+// }
+
+// h1 {
+//   font-size: 54px;
+//   text-transform: uppercase;
+// }
+
+// .container {
+//   padding: 40px;
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   /* background-color: purple; */
+// }
+
+// #gameboard {
+//   margin-top: 40px;
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 450px;
+// }
+
+// .box {
+//   height: 150px;
+//   width: 150px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 150px;
+//   color: purple;
+// }
+
+// .box:hover {
+//   cursor: pointer;
+// }
+
+// button {
+//   padding: 10px 20px;
+//   border-radius: 10px;
+//   background-color: pink;
+//   color: white;
+//   border-color: var(--purple);
+//   font-size: 18px;
+//   transition: 200ms transform;
+// }
+
+// button:hover {
+//   cursor: pointer;
+//   transform: translateY(-2px);
+// }

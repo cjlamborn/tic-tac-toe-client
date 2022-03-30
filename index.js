@@ -20,7 +20,6 @@ console.log('hi')
 // 	})
 // })
 
-
 //  winningCombos = [
 //   { combo: [1, 2, 3] },
 //   { combo: [4, 5, 6] },
@@ -28,91 +27,122 @@ console.log('hi')
 //   { combo: [1, 4, 7] },
 //   { combo: [2, 5, 8] },
 //   { combo: [3, 6, 9] },
-//diagonal
+// diagonal
 //   { combo: [1, 5, 9] },
 //   { combo: [3, 5, 7] }
-// ]
-function myFunction () {
-  const one = document.getElementById('one').value
-  const two = document.getElementById('two').value
-  const three = document.getElementById('three').value
-  const four = document.getElementById('four').value
-  const five = document.getElementById('five').value
-  const six = document.getElementById('six').value
-  const seven = document.getElementById('seven').value
-  const eight = document.getElementById('eight').value
-  const nine = document.getElementById('nine').value
+// ].on("click", fn)
+// $('#log-in').onclick(function () {
+// 	gsap.to('.container', {
+//     opacity: 1,
+// 		duration: 0.5,
+// 		ease: 'none'
+// 	})
+// })
+const gameboard = document.getElementById('gameboard')
+const boxes = Array.from(document.getElementsByClassName('box'))
+const restartButton = document.getElementById('new-game')
+const playText = document.getElementById('playText')
+const spaces = [null, null, null, null, null, null, null, null, null]
+const oText = 'O'
+const xText = 'X'
+let currentPlayer = oText
 
-//////checking for X
-  if ((one === 'X') && (two === 'X') && (three === 'X')) {
-    document.getElementById('print').innerHTML = 'X wins!'
+const drawBoard = () => {
+  boxes.forEach((box, index) => {
+    let styleString = ''
+    if (index < 3) {
+      styleString += 'border-bottom: 3px solid var(--purple);'
+    }
+    if (index % 3 === 0) {
+      styleString += 'border-right: 3px solid var(--purple);'
+    }
+    if (index % 3 === 2) {
+      styleString += 'border-left: 3px solid var(--purple);'
+    }
+    if (index > 5) {
+      styleString += 'border-top: 3px solid var(--purple);'
+    }
+    box.style = styleString
+    box.addEventListener('click', boxClicked)
+  })
 }
-else if ((four === 'X') && (five === 'X') && (six === 'X')) {
-  document.getElementById('print').innerHTML = 'X wins!'
+
+const boxClicked = (event) => {
+  const id = event.target.id
+  if (!spaces[id]) {
+    spaces[id] = currentPlayer
+    event.target.innerText = currentPlayer
+    if (playerHasWon(currentPlayer)) {
+      playText.innerText = `${currentPlayer} has won!`
+      // restart clickReset?
+      return
+    }
+    currentPlayer = currentPlayer === oText ? xText : oText
+  }
 }
-else if ((seven === 'X') && (eight === 'X') && (nine === 'X')) {
-  document.getElementById('print').innerHTML = 'X wins!'
+
+const playerHasWon = (currentPlayer) => {
+  if (spaces[0] === currentPlayer) {
+    if (spaces[1] === currentPlayer && spaces[2] === currentPlayer) {
+      console.log(`${currentPlayer} wins!`)
+      return true
+    }
+    if (spaces[3] === currentPlayer && spaces[6] === currentPlayer) {
+      console.log(`${currentPlayer} wins!`)
+      return true
+    }
+    if (spaces[4] === currentPlayer && spaces[8] === currentPlayer) {
+      console.log(`${currentPlayer} wins!`)
+      return true
+    }
+  }
+  if (spaces[8] === currentPlayer) {
+    if (spaces[2] === currentPlayer && spaces[5] === currentPlayer) {
+      console.log(`${currentPlayer} wins!`)
+      return true
+    }
+    if (spaces[6] === currentPlayer && spaces[7] === currentPlayer) {
+      console.log(`${currentPlayer} wins!`)
+      return true
+    }
+  }
+  if (spaces[4] === currentPlayer) {
+    if (spaces[1] === currentPlayer && spaces[7] === currentPlayer) {
+      console.log(`${currentPlayer} wins!`)
+      return true
+    }
+    if (spaces[3] === currentPlayer && spaces[5] === currentPlayer) {
+      console.log(`${currentPlayer} wins!`)
+      return true
+    }
+  }
 }
-else if ((one === 'X') && (four === 'X') && (seven === 'X')) {
-  document.getElementById('print').innerHTML = 'X wins!'
-}
-else if ((two === 'X') && (five === 'X') && (eight === 'X')) {
-  document.getElementById('print').innerHTML = 'X wins!'
-}
-else if ((three === 'X') && (six === 'X') && (nine === 'X')) {
-  document.getElementById('print').innerHTML = 'X wins!'
-}
-else if ((one === 'X') && (five === 'X') && (nine === 'X')) {
-  document.getElementById('print').innerHTML = 'X wins!'
-}
-else if ((three === 'X') && (five === 'X') && (seven === 'X')) {
-  document.getElementById('print').innerHTML = 'X wins!'
-}
-//checking for 0
-else if ((one === 'O') && (two === 'O') && (three === 'O')) {
-  document.getElementById('print').innerHTML = 'O wins!'
-}
-else if ((four === 'O') && (five === 'O') && (six === 'O')) {
-  document.getElementById('print').innerHTML = 'O wins!'
-}
-else if ((seven === 'O') && (eight === 'O') && (nine === 'O')) {
-  document.getElementById('print').innerHTML = 'O wins!'
-}
-else if ((one === 'O') && (four === 'O') && (seven === 'O')) {
-  document.getElementById('print').innerHTML = 'O wins!'
-}
-else if ((two === 'O') && (five === 'O') && (eight === 'O')) {
-  document.getElementById('print').innerHTML = 'O wins!'
-}
-else if ((one === 'O') && (two === 'O') && (three === 'O')) {
-  document.getElementById('print').innerHTML = 'O wins!'
-}
-else if ((three === 'O') && (six === 'O') && (nine === 'O')) {
-  document.getElementById('print').innerHTML = 'O wins!'
-}
-else if ((one === 'O') && (five === 'O') && (nine === 'O')) {
-  document.getElementById('print').innerHTML = 'O wins!'
-}
-else if ((three === 'O') && (five === 'O') && (seven === 'O')) {
-  document.getElementById('print').innerHTML = 'O wins!'
-}
-// trying to figure out how to check for tie?? maybe an else condition 
-//"its a draw" 
-//reset game
-// function clickReset() {
-//   location.reload ()
-//   document.getElementById('one').value = ''
-//   document.getElementById('two').value = ''
-//   document.getElementById('three').value = ''
-//   document.getElementById('four').value = ''
-//   document.getElementById('five').value = ''
-//   document.getElementById('five').value = ''
-//   document.getElementById('six').value = ''
-//   document.getElementById('seven').value = ''
-//   document.getElementById('eight').value = ''
-//   document.getElementById('nine').value = ''
+restartButton.addEventListener('click', () => {
+  spaces.forEach((space, index) => {
+    spaces[index] = null
+  })
+  boxes.forEach((box) => {
+    box.innerText = ''
+  })
+  playText.innerText = 'Let\'s Play!!'
+  currentPlayer = oText
+})
+drawBoard()
+
+// restartbutton.addEventListener('click', restart)
+
+// const restart = () => {
+// spaces.forEach((space, index) =>{
+// spaces[index] = null
+// resetting the text in the boxes to nothing
+/// //})
+/// ////boxes.forEach(box => {
+/// ///////box.innerText = ''
+// })
+/// play.text.innerText = 'Tic tac toe?'
+/// currentPlayer = O_Text
+// })
 // }
-}
-module.exports = {
-  myFunction
-}
+
+// }
+// restart()

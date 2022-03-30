@@ -8,3 +8,9 @@ $(() => {
 $(() => {
   $('#sign-in-form').on('submit', authEvents.onSignIn)
 })
+$(() => {
+  $('#gameboard').on('mouseover', function (event) {
+    // your code here
+    $(event.target).css('opacity', '100')
+  })
+})
