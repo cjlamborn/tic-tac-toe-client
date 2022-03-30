@@ -4,7 +4,7 @@ const signUp = function (data) {
   console.log(store)
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-up',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/sign-up',
     data: JSON.stringify(data),
     contentType: 'application/json'
     // can also just put data on its own
@@ -14,7 +14,7 @@ const signIn = function (data) {
   console.log(store)
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-in',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/sign-in',
     data: JSON.stringify(data),
     contentType: 'application/json'
     // can also just put data on its own

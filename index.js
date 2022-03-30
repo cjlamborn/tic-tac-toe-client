@@ -129,20 +129,4 @@ restartButton.addEventListener('click', () => {
 })
 drawBoard()
 
-// restartbutton.addEventListener('click', restart)
 
-// const restart = () => {
-// spaces.forEach((space, index) =>{
-// spaces[index] = null
-// resetting the text in the boxes to nothing
-/// //})
-/// ////boxes.forEach(box => {
-/// ///////box.innerText = ''
-// })
-/// play.text.innerText = 'Tic tac toe?'
-/// currentPlayer = O_Text
-// })
-// }
-
-// }
-// restart()
