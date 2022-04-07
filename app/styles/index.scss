@@ -17,27 +17,50 @@ body {
     justify-content: center;
     display: flex;
 }
+#auth-display {
+    font-family: 'Rubik', sans-serif;
+    color: cornflowerblue;
+    position: fixed;
+    top: 19%;
+    left: 41%;
+}
 h1 {
     font-family: 'Rubik', sans-serif;
+    position: fixed;
+    top: 28%;
+    left: 42%;
+}
+h2 {
+    font-family: 'Rubik', sans-serif;
+    position: fixed;
+    top: 23%;
+    left: 43%;
 }
 h3 {
     justify-content: center;
     display: flex;
+    font-size: medium;
 }
 #sign-in-form {
     justify-content: center;
     display: flex;
 }
-h1 {
-    justify-content: center;
-    display: flex;
+#sign-out-button {
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
 }
+// h1 {
+//     justify-content: center;
+//     display: flex;
+// }
 #gameboard{
-    opacity: 0;
-    display: grid;
+    display: none;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
-    justify-content: center;
+    position: fixed;
+    top: 40%;
+    left: 37%;
 }
 .box{
     
@@ -50,15 +73,23 @@ h1 {
     align-items: center;
 }
 button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: peachpuff;
     font-family: 'Rubik', sans-serif;
 }
 #new-game {
     margin: 0;
-    position: absolute;
-    top: 90%;
-    left: 44%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    position: fixed;
+    bottom: 10%;
+    left: 10%;
+    
+}
+#start-game {
+    // justify-content: center;
+    // display: flex;
+    // align-items: center;
+    position: fixed;
+    right: 12%;
+    top: 28%;
+
 }
