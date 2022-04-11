@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 $font-family:'Playfair Display', serif;
-$body-bg-color: pink;
+$body-bg-color: rgb(228, 194, 199);
 $box-bg-color: pink;
 $box-border-color: purple;
 $alt-bg-color: cyan;
@@ -17,6 +17,11 @@ body {
     justify-content: center;
     display: flex;
 }
+#change-password-form {
+    display: none;
+    position: fixed;
+    top: 23%;
+}
 #auth-display {
     font-family: 'Rubik', sans-serif;
     color: cornflowerblue;
@@ -27,13 +32,13 @@ body {
 h1 {
     font-family: 'Rubik', sans-serif;
     position: fixed;
-    top: 28%;
+    top: 33%;
     left: 42%;
 }
 h2 {
     font-family: 'Rubik', sans-serif;
     position: fixed;
-    top: 23%;
+    top: 29%;
     left: 43%;
 }
 h3 {
@@ -60,17 +65,21 @@ h3 {
     grid-template-rows: 100px 100px 100px;
     position: fixed;
     top: 40%;
-    left: 37%;
+    left: 38%;
 }
 .box{
     
-    background-color: white;
+    background-color: cornflowerblue;
     border-color: purple;
     margin: 10px;
     color: pink; font-size: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+.box:hover {
+  background-color:bisque;
 }
 button {
     padding: 5px 10px;

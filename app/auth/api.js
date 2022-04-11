@@ -21,17 +21,17 @@ const signIn = function (data) {
   })
 }
 
-// const changePassword = function (data) {
-// 	return $.ajax({
-// 		method: 'PATCH',
-// 		url: 'https://library-express-api.herokuapp.com/change-password',
-// 		headers: {
-// 			Authorization: 'Bearer ' + store.user.token,
-// 		},
-// 		data,
-// 		// same as data: data
-// 	})
-// }
+const changePassword = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/change-password',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+    // same as data: data
+  })
+}
 
 const signOut = function () {
   return $.ajax({
@@ -46,6 +46,6 @@ const signOut = function () {
 module.exports = {
   signUp,
   signIn,
-  // changePassword,
+  changePassword,
   signOut
 }
