@@ -17,30 +17,42 @@
 </head>
 
 <body>
-  
+  <!-- <img src='folder/image.gif' id='selector' /> -->
   <div id="log-in">
-    <h1>Browser Template</h1>
-    <h3>Sign Up</h3> 
+    <h3 class="info">Sign Up</h3> 
     <form id="sign-up-form">
       <input name="credentials[email]" type="email" placeholder="email">
       <input name="credentials[password]" type="password" placeholder="password">
       <input name="credentials[password_confirmation" type="password" placeholder="password again">
       <button type="submit">Sign Up</button>
+      <!-- //maybe add <button onclick="document.getElementById('InputID').value = ''> -->
     </form>
-    <h3>Sign In</h3>
+    <h3 class="info">Sign In</h3>
     <form id="sign-in-form">
       <input name="credentials[email]" type="email" placeholder="email">
       <input name="credentials[password]" type="password" placeholder="password">
-      <button type="submit">Sign In</button>
+      <button id="sign" type="submit">Sign In</button>
     </form>
+    <!-- <h3>Change Password</h3> -->
+    <form id="change-password-form">
+      <input name="passwords[old]" type="password" placeholder="Enter old password">
+      <input name="passwords[new]" type="password" placeholder="Enter new password">
+      <button type="submit">Change Password</button>
+    </form>
+    <h3></h3>
+    <button id="sign-out-button">Sign Out</button>
+    
     <section id="auth-display"></section>
+    <!-- <section id="auth-display"></section> -->
   </div>
-  <h1>Tic Tac Toe</h1>
+  <h4 id="rules">to start and register new game click 'New Game' first</h4>
+  <h2>Tic Tac Toe</h2>
   <!-- <p id="ins">Click once for X. Double click for O</p> -->
   </div>
 
 <div class="container">
   <h1 id="playText">Let's Play!!</h1>
+  <!-- <button id="start-game">Start</button> -->
   
   <div id="gameboard">
     <div class="box" id="0"></div>
@@ -55,26 +67,6 @@
     <button id="new-game">New Game</button>
   </div>
 </div>
- <!-- <script>
-   function xxxx () {
-     document.getElementById('gameboard').style.display = 'block'
-   }
- </script> -->
-  <!-- <script>
-    function clickReset() {
-        location.reload()
-        document.getElementById('one').value = ''
-        document.getElementById('two').value = ''
-        document.getElementById('three').value = ''
-        document.getElementById('four').value = ''
-        document.getElementById('five').value = ''
-        document.getElementById('five').value = ''
-        document.getElementById('six').value = ''
-        document.getElementById('seven').value = ''
-        document.getElementById('eight').value = ''
-        document.getElementById('nine').value = ''
-      }
-  </script> -->
 </body>
 
 </html>

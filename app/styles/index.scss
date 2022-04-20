@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 $font-family:'Playfair Display', serif;
-$body-bg-color: pink;
+$body-bg-color: rgb(228, 194, 199);
 $box-bg-color: pink;
 $box-border-color: purple;
 $alt-bg-color: cyan;
@@ -13,52 +13,96 @@ body {
   flex-direction: column;
   
 }
-#sign-up-form {
-    justify-content: center;
-    display: flex;
+#change-password-form {
+    display: none;
+    position: fixed;
+    top: 23%;
+}
+#rules {
+    display: none;
+    font-size: medium;
+    font-family: 'Rubik', sans-serif;
+    color: cornflowerblue;
+    position: fixed;
+    top: 10%;
+}
+#auth-display {
+    font-family: 'Rubik', sans-serif;
+    color: cornflowerblue;
+    position: fixed;
+    top: 19%;
+    left: 41%;
 }
 h1 {
     font-family: 'Rubik', sans-serif;
+    position: fixed;
+    top: 33%;
+    left: 42%;
+}
+h2 {
+    font-family: 'Rubik', sans-serif;
+    position: fixed;
+    top: 29%;
+    left: 43%;
 }
 h3 {
     justify-content: center;
     display: flex;
+    font-size: medium;
 }
 #sign-in-form {
     justify-content: center;
-    display: flex;
 }
-h1 {
-    justify-content: center;
-    display: flex;
+#sign-out-button {
+    display: none;
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
 }
+// h1 {
+//     justify-content: center;
+//     display: flex;
+// }
 #gameboard{
-    opacity: 0;
-    display: grid;
+    display: none;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
-    justify-content: center;
+    position: fixed;
+    top: 40%;
+    left: 38%;
 }
 .box{
     
-    background-color: white;
+    background-color: cornflowerblue;
     border-color: purple;
     margin: 10px;
     color: pink; font-size: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+.box:hover {
+  background-color:bisque;
 }
 button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: peachpuff;
     font-family: 'Rubik', sans-serif;
 }
 #new-game {
     margin: 0;
-    position: absolute;
-    top: 90%;
-    left: 44%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    position: fixed;
+    bottom: 10%;
+    left: 10%;
+    
+}
+#start-game {
+    // justify-content: center;
+    // display: flex;
+    // align-items: center;
+    position: fixed;
+    right: 12%;
+    top: 28%;
+
 }

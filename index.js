@@ -2,86 +2,88 @@
 // var example = require('./example');
 
 import 'bootstrap'
-
+// hello
 // allows usage of new JS features
 require('babel-polyfill')
-
+const store = require('./app/store.js')
 // load manifests
 // javascript entry point
 require('./app/app.js')
-
-// styles
+const API = require('./app/game/api.js')
+// these are the styles
 require('./app/styles/index.scss')
 console.log('hi')
-// const boxes = document.querySelectorAll(".box")
-// boxes.forEach((element) => {
-// 	element.addEventListner('click', (e) => {
-// 		console.log('X')
-// 	})
-// })
 
-//  winningCombos = [
-//   { combo: [1, 2, 3] },
-//   { combo: [4, 5, 6] },
-//   { combo: [7, 8, 9] },
-//   { combo: [1, 4, 7] },
-//   { combo: [2, 5, 8] },
-//   { combo: [3, 6, 9] },
-// diagonal
-//   { combo: [1, 5, 9] },
-//   { combo: [3, 5, 7] }
-// ].on("click", fn)
-// $('#log-in').onclick(function () {
-// 	gsap.to('.container', {
-//     opacity: 1,
-// 		duration: 0.5,
-// 		ease: 'none'
-// 	})
-// })
-const gameboard = document.getElementById('gameboard')
+// const gameboard = document.getElementById('gameboard')
 const boxes = Array.from(document.getElementsByClassName('box'))
 const restartButton = document.getElementById('new-game')
 const playText = document.getElementById('playText')
 const spaces = [null, null, null, null, null, null, null, null, null]
 const oText = 'O'
 const xText = 'X'
+// const blankText = ' '
 let currentPlayer = oText
-
+let gameOver = false
+// post
 const drawBoard = () => {
+  gameOver = false
+  API.newGame()
+    .then(response => {
+      store.game = response.game
+      console.log(response)
+    })
   boxes.forEach((box, index) => {
-    let styleString = ''
+    const styleString = ''
     if (index < 3) {
-      styleString += 'border-bottom: 3px solid var(--purple);'
+      if (index % 3 === 0) {
+        if (index % 3 === 2) {
+          if (index > 5) { box.style = styleString }
+        }
+      }
     }
-    if (index % 3 === 0) {
-      styleString += 'border-right: 3px solid var(--purple);'
-    }
-    if (index % 3 === 2) {
-      styleString += 'border-left: 3px solid var(--purple);'
-    }
-    if (index > 5) {
-      styleString += 'border-top: 3px solid var(--purple);'
-    }
-    box.style = styleString
     box.addEventListener('click', boxClicked)
   })
 }
+restartButton.addEventListener('click', drawBoard)
+// const targetDiv = document.getElementById('gameboard')
+// const btn = document.getElementById('start-game')
+// btn.onclick = function () {
+//   if (targetDiv.style.display !== 'none') {
+//     targetDiv.style.display = 'grid'
+//   }
+// }
+// const targetClick = document.getElementById('change-password-form')
+// const butn = document.getElementById('sign')
+// butn.onclick = function () {
+//   if (targetClick.style.display !== 'none') {
+//     targetClick.style.display = 'flex'
+//   }
+// }
+// patch
 
-const boxClicked = (event) => {
+const boxClicked = (event, box) => {
   const id = event.target.id
   if (!spaces[id]) {
     spaces[id] = currentPlayer
     event.target.innerText = currentPlayer
     if (playerHasWon(currentPlayer)) {
+      console.log('player won')
+      gameOver = true
       playText.innerText = `${currentPlayer} has won!`
-      // restart clickReset?
-      return
-    }
-    currentPlayer = currentPlayer === oText ? xText : oText
+      boxes.forEach(box => {
+        box.removeEventListener('click', boxClicked)
+        console.log(box)
+      })
+    } API.update(id, currentPlayer, gameOver)
+      .then(response => console.log(response))
   }
+  currentPlayer = currentPlayer === oText ? xText : oText
 }
+// function notClicked (box) {
+//   box.removeEventListener('click', boxClicked)
+// }
 
-const playerHasWon = (currentPlayer) => {
+function playerHasWon (currentPlayer) {
   if (spaces[0] === currentPlayer) {
     if (spaces[1] === currentPlayer && spaces[2] === currentPlayer) {
       console.log(`${currentPlayer} wins!`)
@@ -115,18 +117,29 @@ const playerHasWon = (currentPlayer) => {
       console.log(`${currentPlayer} wins!`)
       return true
     }
+    if (spaces[2] === currentPlayer && spaces[6] === currentPlayer) {
+      console.log(`${currentPlayer} wins!`)
+      return true
+    }
   }
+  // notClicked()
+  // box.removeEventListener('click', boxClicked)
+  // }
+  // playerHasWon() && gameOver()
+
+  // function gameOver (box) {
+  //   box.removeEventListener('click', boxClicked)
+  // }
+  restartButton.addEventListener('click', () => {
+  // drawBoard()
+    spaces.forEach((space, index) => {
+      spaces[index] = null
+    })
+    boxes.forEach((box) => {
+      box.innerText = ''
+      box.addEventListener('click', boxClicked)
+    })
+    playText.innerText = 'Let\'s Play!!'
+    currentPlayer = oText
+  })
 }
-restartButton.addEventListener('click', () => {
-  spaces.forEach((space, index) => {
-    spaces[index] = null
-  })
-  boxes.forEach((box) => {
-    box.innerText = ''
-  })
-  playText.innerText = 'Let\'s Play!!'
-  currentPlayer = oText
-})
-drawBoard()
-
-
