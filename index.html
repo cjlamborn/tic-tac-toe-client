@@ -17,9 +17,9 @@
 </head>
 
 <body>
-  
+  <!-- <img src='folder/image.gif' id='selector' /> -->
   <div id="log-in">
-    <h3>Sign Up</h3> 
+    <h3 class="info">Sign Up</h3> 
     <form id="sign-up-form">
       <input name="credentials[email]" type="email" placeholder="email">
       <input name="credentials[password]" type="password" placeholder="password">
@@ -27,13 +27,13 @@
       <button type="submit">Sign Up</button>
       <!-- //maybe add <button onclick="document.getElementById('InputID').value = ''> -->
     </form>
-    <h3>Sign In</h3>
+    <h3 class="info">Sign In</h3>
     <form id="sign-in-form">
       <input name="credentials[email]" type="email" placeholder="email">
       <input name="credentials[password]" type="password" placeholder="password">
       <button id="sign" type="submit">Sign In</button>
     </form>
-    <h3>Change Password</h3>
+    <!-- <h3>Change Password</h3> -->
     <form id="change-password-form">
       <input name="passwords[old]" type="password" placeholder="Enter old password">
       <input name="passwords[new]" type="password" placeholder="Enter new password">
@@ -45,13 +45,14 @@
     <section id="auth-display"></section>
     <!-- <section id="auth-display"></section> -->
   </div>
+  <h4 id="rules">to start and register new game click 'New Game' first</h4>
   <h2>Tic Tac Toe</h2>
   <!-- <p id="ins">Click once for X. Double click for O</p> -->
   </div>
 
 <div class="container">
   <h1 id="playText">Let's Play!!</h1>
-  <button id="start-game">Start</button>
+  <!-- <button id="start-game">Start</button> -->
   
   <div id="gameboard">
     <div class="box" id="0"></div>

@@ -13,14 +13,18 @@ body {
   flex-direction: column;
   
 }
-#sign-up-form {
-    justify-content: center;
-    display: flex;
-}
 #change-password-form {
     display: none;
     position: fixed;
     top: 23%;
+}
+#rules {
+    display: none;
+    font-size: medium;
+    font-family: 'Rubik', sans-serif;
+    color: cornflowerblue;
+    position: fixed;
+    top: 10%;
 }
 #auth-display {
     font-family: 'Rubik', sans-serif;
@@ -48,9 +52,9 @@ h3 {
 }
 #sign-in-form {
     justify-content: center;
-    display: flex;
 }
 #sign-out-button {
+    display: none;
     position: fixed;
     right: 10%;
     bottom: 10%;

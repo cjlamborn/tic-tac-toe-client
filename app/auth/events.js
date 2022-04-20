@@ -12,17 +12,6 @@ const onSignUp = function (event) {
   const form = event.target
   const data = getFormFields(form)
   console.log(data)
-
-  if (data.credentials.password !== data.credentials.password_confirmation) {
-	    $('#auth-display').html('<p>Passwords do not match</p>')
-  } else {
-	    // api call
-	    authApi
-	        .signUp(data)
-	        .then(() => authUi.onSignUpSuccess())
-	        .catch(() => authUi.onSignUpFailure())
-  }
-
   authApi
     .signUp(data)
     .then(() => authUi.onSignUpSuccess())
