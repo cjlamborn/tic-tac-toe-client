@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Rubik&display=swap" rel="stylesheet">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <!-- <script type="text/javascript" src="http://bpmaker.giffy.me/userdata/user/53/53959/2/parts.js"></script> -->
+</head>
+
+<body>
+  <!-- <img src='folder/image.gif' id='selector' /> -->
+  <div id="log-in">
+    <h3 class="info">Sign Up</h3> 
+    <form id="sign-up-form">
+      <input name="credentials[email]" type="email" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input name="credentials[password_confirmation" type="password" placeholder="password again">
+      <button type="submit">Sign Up</button>
+      <!-- //maybe add <button onclick="document.getElementById('InputID').value = ''> -->
+    </form>
+    <h3 class="info">Sign In</h3>
+    <form id="sign-in-form">
+      <input name="credentials[email]" type="email" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <button id="sign" type="submit">Sign In</button>
+    </form>
+    <!-- <h3>Change Password</h3> -->
+    <form id="change-password-form">
+      <input name="passwords[old]" type="password" placeholder="Enter old password">
+      <input name="passwords[new]" type="password" placeholder="Enter new password">
+      <button type="submit">Change Password</button>
+    </form>
+    <h3></h3>
+    <button id="sign-out-button">Sign Out</button>
+    
+    <section id="auth-display"></section>
+    <!-- <section id="auth-display"></section> -->
+  </div>
+  <h4 id="rules">to start and register new game click 'New Game' first</h4>
+  <h2>Tic Tac Toe</h2>
+  <!-- <p id="ins">Click once for X. Double click for O</p> -->
+  </div>
+
+<div class="container">
+  <h1 id="playText">Let's Play!!</h1>
+  <!-- <button id="start-game">Start</button> -->
+  
+  <div id="gameboard">
+    <div class="box" id="0"></div>
+    <div class="box" id="1"></div>
+    <div class="box" id="2"></div>
+    <div class="box" id="3"></div>
+    <div class="box" id="4"></div>
+    <div class="box" id="5"></div>
+    <div class="box" id="6"></div>
+    <div class="box" id="7"></div>
+    <div class="box" id="8"></div>
+    <button id="new-game">New Game</button>
+  </div>
+</div>
+</body>
+
+</html>
